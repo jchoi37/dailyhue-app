@@ -34,9 +34,8 @@ const data = require('./quotes.json')
 
   render() {
    const {chosenQuote} = this.state
-   console.log(chosenQuote, "PRERETURN UQOTE?!")
     return (
-      <View >
+      <View style = {styles.container}>
         { chosenQuote.id
         ? <QuoteScreen
         chosenQuote ={chosenQuote}

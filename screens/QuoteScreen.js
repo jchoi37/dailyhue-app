@@ -5,8 +5,9 @@ const QuoteScreen = props => {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.quoteContainer}>
         <Text>{props.chosenQuote.quote}</Text>
+        <br/>
         <Text>{props.chosenQuote.author}</Text>
       </View>
       <View style ={styles.button}>
@@ -24,6 +25,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  quoteContainer:{
+    flex: 1,
+    flexWrap: 'wrap',
+    justifyContent: "center",
+    alignItems:'center'
   },
   button: {
     width: 100
