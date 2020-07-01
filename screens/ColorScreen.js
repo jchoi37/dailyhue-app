@@ -3,31 +3,15 @@ import { StyleSheet, Text, View, Button, FlatList, TouchableOpacity} from 'react
 
 const data = require('../colors.json')
 
+
+
+
 export default function ColorScreen (props) {
-  console.log(props.color.id, "COLROE IDDD")
   return (
     <View style={styles.container}>
       <Text>Choose your Mood</Text>
-      <View style = {styles.buttonContainer}>
-        <FlatList
-         data = {data.colorList}
-         renderItem = {({item}) => (
-          <View
+      <ColorPicker/>
 
-          style={[styles.buttonWrap,
-          props.color.id ===item.id ? styles.active : styles.not]}
-          >
-          <TouchableOpacity
-          style = {[styles.button,
-          {backgroundColor : item.color}
-          ]}
-          onPress={()=>props.colorHandler(item)}
-          />
-          </View>
-        )}
-          numColumns={5}
-          />
-      </View>
       <Button
       title="Inspire Me"
       onPress={props.moodHandler}/>
