@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, FlatList, TouchableOpacity} from 'react-native';
-
+import {ColorPicker} from 'react-native-color-picker'
 const data = require('../colors.json')
 
 
@@ -10,7 +10,11 @@ export default function ColorScreen (props) {
   return (
     <View style={styles.container}>
       <Text>Choose your Mood</Text>
-      <ColorPicker/>
+      <ColorPicker
+      oldColor='purple'
+      onColorSelected={color => alert(`Color selected: ${color}`)}
+      style={{flex: 1}}
+    />
 
       <Button
       title="Inspire Me"
@@ -22,10 +26,7 @@ export default function ColorScreen (props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexWrap:'wrap',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingTop: 30,
     paddingBottom:30
   },
